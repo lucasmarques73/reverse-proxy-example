@@ -11,9 +11,9 @@ services:
   webapp1:
     image: httpd
     environment:
-     - VIRTUAL_HOST=resume.local
+     - VIRTUAL_HOST=webapp1.local
 
   webapp2:
     image: nginx
     environment:
-     -  VIRTUAL_HOST=home.local
+     -  VIRTUAL_HOST=webapp2.local
