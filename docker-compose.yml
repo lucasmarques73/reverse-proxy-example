@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  reverse-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+    - "80:80"
+    volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  webapp1:
+    image: httpd
+    environment:
+     - VIRTUAL_HOST=resume.local
+
+  webapp2:
+    image: nginx
+    environment:
+     -  VIRTUAL_HOST=home.local
